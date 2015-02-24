@@ -1,0 +1,420 @@
+.header-container.home {
+	// overflow: visible;
+	// position: relative;
+	// overflow: hidden;
+	z-index: 2;
+	height: 1065px;
+	background-color: #000;
+	// width: 100%;
+	@include ri("header-bg-winter", 2560px 1065px, jpg);
+
+	#big-video-vid {
+		position: absolute;
+	}
+
+	// .header-video {
+	// 	height: 1070px;
+	// 	width: 100%;
+	// 	overflow: hidden;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	z-index: -1;
+
+	// 	video {
+	// 		height: 100%;
+	// 		width: auto;
+	// 		top: 0px;
+	// 		position: absolute;
+	// 		@include user-select(none);
+	// 		z-index: 0;
+	// 	}
+	// }
+}
+
+.home .header {
+	height: 1060px;	
+
+	.headline {
+		@include span-columns(12 of 12);
+		@include omega;
+		margin-top: 75px;
+		text-align: center;
+
+		.header-subtitle {
+			display: block;
+			max-width: 800px;
+			margin: 10px auto;
+			margin-bottom: 20px;
+			font-weight: 200;
+		}
+
+		.buynow {
+			display: inline-block;
+			background-color: #201e23;
+			text-transform: uppercase;
+			font-size: 20px;
+			border-radius: 8px;
+			font-weight: 200;
+			width: 185px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			@include ri("button-arrow", 10px 18px, png);
+			background-repeat: no-repeat;
+			background-position: 142px 20px;
+			padding-right: 20px;
+			@include transition(background-color 0.2s ease-in-out);
+			z-index: 2;
+
+			&:hover {
+				background-color: rgb(50, 144, 251);
+				opacity: 1;
+			}
+		}
+	}
+
+	.download {
+		position: absolute;
+		right: 0;
+		bottom: 30px;
+		width: 456px;
+
+		p {
+			font-size: 18px;
+			color: #a89d9d;
+			margin-bottom: 5px;
+			font-weight: 300;
+		}
+
+		a {
+			float: left;
+			background-repeat: no-repeat;
+			width: 223px;
+			height: 59px;
+			display: block;
+			color: transparent;
+			@include transition(all 0.2s ease-in-out);
+		}
+
+		.appstore {
+			clear: both;
+			@include ri("appstore", 223px 59px, png);
+			margin-right: 10px;
+		}
+
+		.playstore {
+			@include ri("playstore", 223px 59px, png);
+		}
+
+		.appstore-hover, .appstore:hover {
+			@include ri("appstore-hover", 223px 59px, png);
+		}
+
+		.playstore-hover, .playstore:hover {
+			@include ri("playstore-hover", 223px 59px, png);
+		}
+	}
+
+	.hand {
+		position: absolute;
+		bottom: -20px;
+		left: -150px;
+		@include ri("hand", 676px 604px);
+		width: 676px;
+		height: 604px;
+		z-index: 1;
+		opacity: 0;
+
+		.demo {
+			background-image: url('../images/thermodo_screen6.gif');
+			width: 220px;
+			height: 321px;
+			position: absolute;
+			right: 45px;
+			top: 62px;
+		}
+	}
+}
+
+.products {
+	padding: 120px 0;
+
+	.product {
+		@include span-columns(6 of 12);
+		@include pad(20px);
+		opacity: 0;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:nth-child(even) {
+			@include omega;
+		}
+
+
+		&:hover {
+			.render {
+				@include transition(opacity 0.2s ease-in-out);
+				opacity: 0.7;
+			}
+
+			.buy {
+				color: #fff;
+			}
+		}
+
+		&.black {
+			.buy .price {
+				@include ri("button-buy-black", 105px 55px);
+			}
+
+			&:hover .buy {
+				background-color: #000;
+			}
+		}
+
+		&.premium{
+			.price .buy  {
+				@include ri("button-buy-premium", 105px 55px);
+			}
+
+			&:hover .buy {
+				background-color: #797474;
+			}
+		}
+
+		.buy {
+			display: inline-block;
+			margin-top: 60px;
+			text-decoration: none;
+			font-size: 18pt;
+			color: #000;
+			border: 2px solid #000;
+			border-radius: 6px;
+			overflow: hidden;
+			@include transition(all 0.2s ease-in-out);
+
+			span {
+				display: inline-block;
+				padding: 12px 20px;
+			}
+
+			.name {
+				font-weight: 500;
+			}
+
+			.price {
+				background-color: #000;
+				color: #fff;
+				display: inline-block;
+				background-repeat: no-repeat;
+				border-left: 2px solid #000;
+			}
+		}
+
+		p {
+			color: #000;
+			text-decoration: none;
+			font-size: 13pt;
+			line-height: 19pt;
+		}
+	}
+}
+
+.heatmap-container-hover {
+	@include ri("heatmap-bg-hover", 2558px 85px, jpg);
+	height: 0;
+}
+
+.heatmap-container {
+	display: block;
+	@include ri("heatmap-bg", 2558px 85px, jpg);
+	background-repeat: no-repeat;
+	@include transition (all 0.2s ease-in-out);
+
+	&:hover {
+		@include ri("heatmap-bg-hover", 2558px 85px, jpg);
+	}
+
+	&, &:visited {
+		text-decoration: none;
+	}
+}
+
+.heatmap {
+	height: 85px;
+	text-align: center;
+
+	h2 {
+		margin: 0;
+		padding: 0;
+		height: 85px;
+		line-height: 85px;
+		color: #fff;
+		
+		font-size: 32pt;
+	}
+}
+
+.crafted-container {
+	@include ri("crafted-bg", 2560px 938px, jpg);
+	background-repeat: no-repeat;
+}
+
+.crafted {
+	height: 938px;
+	color: #fff;
+	padding: 120px 0;
+
+	.text {
+		@include span-columns(6 of 12);
+		@include shift(6);
+		@include omega;
+	}
+
+	a {
+		margin-top: 20px;
+	}
+}
+
+.works-container {
+	background-color: #4d4d4d;
+	@include background-image(linear-gradient(#1b1b1b 0, transparent 100%));
+}
+
+.works {
+	color: #fff;
+	padding: 40px 0;
+
+	.aside {
+		margin-top: 30px;
+	}
+
+	.demo {
+		float: right;
+	}
+
+	a {
+		margin-top: 20px;
+	}
+}
+
+.is-ios .kickstarter-container {
+	background: url(kickstarter-bg.jpg);
+}
+.kickstarter-container {
+	// width: 100%;
+	overflow: hidden;
+	position: relative;
+	// z-index: 2;
+	height: 950px;
+	width: 100%;
+	background-color: #000;
+	@include retina-image("kickstarter-bg", 2560px 950px, jpg);
+
+
+	#big-video-wrap {
+		position: absolute;
+		z-index: 3;
+		// display: none;
+	}
+}
+
+.kickstarter {
+	margin-top: 200px;
+	z-index: 20;
+	color: #fff;
+	position: relative;
+
+	h2 {
+		margin-top: 10px;
+	}
+
+	p {
+		// font-weight: 200;
+
+		a {
+			color: #fff;
+			font-weight: 400;
+			text-decoration: underline;
+			@include transition(color 0.2s ease-in-out);
+
+			&:hover {color: #ccc}
+		}
+	}
+
+	.play {
+		@include ri("play", 250px 250px);
+		display: inline-block;
+		width: 250px;
+		height: 250px;
+		color: transparent;
+		@include transition(opacity 0.2s ease);
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	.aside {
+		text-align: center;
+		padding-top: 208px;
+	}
+}
+
+@include media(max-width 600px) {
+	.container {
+		.heatmap-container .heatmap {
+			h2 {
+				line-height: 85px;
+				font-size: 22pt;
+			}
+		}
+	}
+}
+
+@include media(max-width 420px) {
+	body .container {
+		.heatmap-container .heatmap {
+			h2 {
+				font-size: 18pt;
+			}
+		}
+
+		.header-container.home .header {
+			.headline {
+				.header-subtitle {
+					font-size: 26pt;
+					line-height: 34pt;
+				}
+			}
+		}
+		.kickstarter-container {
+			.kickstarter-video {
+				display: none;
+			}
+
+			.kickstarter {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+// @include media(max-width 320px) {
+// 	body .container {
+// 		.crafted-container {
+// 			@include ri("craft", 569px 569px);
+// 			background-position: center center;
+// 			background-size: cover;
+
+// 			.crafted {
+// 				padding: 60px 0;
+// 				margin-bottom: -30px;
+// 			}
+// 		}
+// 	}
+// }
+
+.is-ios .crafted-container {
+	background: url(crafted-bg.jpg);	
+}

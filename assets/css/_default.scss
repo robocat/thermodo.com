@@ -1,0 +1,100 @@
+.header-container.default, 
+.header-container.checkout, 
+.header-container.developers,
+.header-container.faq {
+	overflow: visible;
+}
+
+.checkout .header .navbar nav {
+	margin-top: 7px;
+}
+
+.default .header, .checkout .header {
+	.navbar {
+		margin-bottom: 20px;
+		height: auto;
+
+		// .bag {
+		// 	width: 110px;
+		// }
+
+		.bag {
+			span {
+				display: block;
+				float: left;
+				height: 46px;
+				line-height: 46px;
+			}
+		}
+
+		nav {
+			a, span {
+				color: #000;
+
+				&.active, &:hover {
+					border-color: #000;
+				}
+				&.active:hover {
+					background-color: #000;
+					color: #fff;
+				}
+
+				&.bag:hover {
+					border-color: transparent;;
+					color: #000;
+				}
+			}
+			.bag .item-count {
+				color: #fff;
+				@include ri("bag-black", 37px 38px);
+			}
+		}
+	}
+
+	.secure, .text, .lock {
+		font-size: 13pt;
+		font-weight: 500;
+		height: 28px;
+		line-height: 28px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.secure {
+		float: right;
+	}
+
+	.text {
+		display: block;
+		float: left;
+	}
+
+	.lock {
+		@include ri("lock", 22px 28px);
+		display: block;
+		float: left;
+		height: 28px;
+		margin-right: 8px;
+		width: 22px;
+	}
+}
+
+.footer-checkout-container {
+	background-color: #000;
+}
+
+.footer-checkout {
+	color: #a89d9d;
+	text-align: center;
+	padding: 60px 0;
+
+	.space {
+		display: inline-block;
+		width: 20px;
+	}
+
+	p, a {
+		color: #a89d9d;
+		font-size: 10pt;
+	}
+}

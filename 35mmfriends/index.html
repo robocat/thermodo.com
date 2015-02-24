@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="ru-RU">
+	<head>
+		<meta charset="utf-8">
+		<title>iblazr thermodo pressy</title>
+
+		<style>
+			html {
+				height: 100%
+			}
+
+			body {
+				background: #d8d8d8;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 14px;
+				color: #4f5259;
+				min-height: 100%;
+			}
+
+			p {
+				font-size: 14px;
+				color: #4f5259;
+				line-height: 1.5;
+			}
+
+			a {
+				text-decoration: none;
+				outline: none;
+				color: #868686;
+				font-size: 14px;
+			}
+
+			a:hover {
+				text-decoration: underline;
+				outline: none;
+				font-size: 14px;
+			}
+
+			code {
+				font-family: "Courier New", Courier, monospace;
+				color: #000;
+			}
+
+			blockquote {
+				font-style: italic;
+				background: #ccc;
+				margin-left: 20px;
+			}
+
+			#wrap {
+				width: 960px;
+				background: #ededed;
+				margin: 0 auto;
+			}
+
+			.clear {
+				clear: both;
+			}
+
+			/*Header*/
+			#header {
+				height: 205px;
+			}
+
+			#header_top {
+				height: 64px;
+				background: #1a1e27;
+			}
+
+			#header_bottom {
+				height: 141px;
+			}
+			/*Top navigation*/
+			#header ul {
+				float: left;
+				margin: 23px 244px 0 34px;
+			}
+
+			#header ul li {
+				float: left;
+				padding-left: 10px;
+			}
+
+			#header ul li a {
+				height: 41px;
+				display: block;
+			}
+
+			#header ul li a:hover {
+				height: 41px;
+				display: block;
+				text-decoration: none;
+				background: url(img/nav_arrow.png) no-repeat bottom;
+			}
+
+			.select {
+				color: #fff;
+				height: 41px;
+				display: block;
+				text-decoration: none;
+				background: url(img/nav_arrow.png) no-repeat bottom;
+			}
+
+			/*Search Form*/
+			#search {
+				float: right;
+				margin: 14px 32px 0 0;
+				width: 191px;
+				height: 35px;
+				background: url(img/search_bg.png) no-repeat;
+			}
+
+			.search_text {
+				width: 137px;
+				padding: 6px 0 0 25px;
+				background: none;
+				border: none;
+				outline: none;
+			}
+
+			.go {
+				width: 15px;
+				padding: 6px 0 0 25px;
+				background: none;
+				border: none;
+				cursor: pointer;
+			}
+
+			#rss {
+				margin: 24px 15px 0 0;
+				float: right;
+			}
+
+			#rss span {
+				margin-right: 7px;
+				position: relative;
+				top: -5px;
+			}
+
+			/*Logo*/
+			#header_bottom h1 {
+				font-size: 28px;
+				text-transform: uppercase;
+				float: left;
+				display: inline-block;
+				font-weight: 700;
+				color: #2f333b;
+				margin: 60px 25px 0 74px;
+			}
+
+			#discription {
+				width: 218px;
+				font-style: italic;
+				display: inline-block;
+				background: url(img/logo_line.png) no-repeat left;
+				padding-left: 25px;
+				margin-top: 68px;
+				clear: both;
+				color: #646464;
+			}
+
+			#slogan {
+				margin: -5px 0 0 74px;
+				color: #646464;
+			}
+
+			/*Slider*/
+			#slider {
+				width: 820px;
+				margin: 0 auto;
+			}
+
+			.ui-tabs-nav img {
+				width: 80px;
+				height: 50px;
+			}
+
+			#featured {
+				width: 570px;
+				padding-right: 250px;
+				position: relative;
+				height: 239px;
+				background: #1E1F24;
+			}
+			#featured ul.ui-tabs-nav {
+				position: absolute;
+				top: 0;
+				left: 563px;
+				list-style: none;
+				padding: 25px 0 0 0;
+				margin: 0;
+				width: 250px;
+			}
+			#featured ul.ui-tabs-nav li {
+				padding: 1px 0;
+				padding-left: 13px;
+				font-size: 12px;
+				color: #666;
+			}
+			#featured ul.ui-tabs-nav li img {
+				float: left;
+				margin: 2px 5px;
+				background: #fff;
+				padding: 2px;
+				border: 1px solid #eee;
+			}
+			#featured ul.ui-tabs-nav li span {
+				font-size: 11px;
+				font-family: Verdana;
+				line-height: 18px;
+			}
+			#featured li.ui-tabs-nav-item a {
+				display: block;
+				height: 60px;
+				color: #fff;
+				text-decoration: none;
+				line-height: 20px;
+			}
+			#featured li.ui-tabs-nav-item a:hover {
+				color: #999;
+			}
+
+			#featured .ui-tabs-panel {
+				width: 563px;
+				height: 239px;
+				background: #999;
+				position: relative;
+			}
+			#featured .ui-tabs-panel .info {
+				position: absolute;
+				top: 169px;
+				left: 0;
+				height: 70px;
+				background: url('img/transparent-bg.png');
+			}
+			#featured .info h2 {
+				font-size: 18px;
+				font-family: Georgia, serif;
+				color: #fff;
+				padding: 5px;
+				margin: 0;
+				overflow: hidden;
+			}
+			#featured .info p {
+				margin: 0 5px;
+				font-family: Verdana;
+				font-size: 11px;
+				line-height: 15px;
+				color: #f0f0f0;
+			}
+			#featured .info a {
+				text-decoration: none;
+				color: #fff;
+			}
+			#featured .info a:hover {
+				text-decoration: underline;
+			}
+			#featured .ui-tabs-hide {
+				display: none;
+			}
+
+			/*End Slider*/
+
+			/*Content*/
+			#conteiner {
+				padding-top: 40px;
+			}
+
+			#content {
+				width: 516px;
+				float: left;
+				padding: 0 50px 0 32px;
+			}
+			#content_header {
+				font-size: 25px;
+				color: #fff;
+				text-transform: uppercase;
+				background: #1a1e27;
+				margin-bottom: 15px;
+				width: 270px;
+			}
+
+			.post {
+				margin-bottom: 40px;
+			}
+
+			.post h2 a {
+				font-size: 24px;
+				color: #4a4d54;
+				text-transform: capitalize;
+			}
+
+			.cat {
+				padding-right: 7px;
+				border-right: 1px solid #fff;
+			}
+
+			.cat a {
+				font-style: italic;
+			}
+
+			.date {
+				padding-left: 7px;
+				border-left: 1px solid #d5d5d5;
+				margin-left: -4px;
+			}
+
+			.date_text {
+				font-style: italic;
+				color: #868686;
+			}
+
+			.phead {
+				margin-bottom: 10px;
+			}
+
+			.post img {
+				border: 1px solid #c6c6c6;
+				padding: 2px;
+				float: left;
+				margin-right: 5px;
+			}
+
+			.post p {
+				padding-left: 153px;
+			}
+
+			.meta_bottom {
+				margin: 10px 0 0 153px;
+				line-height: 1.5;
+				border-top: 1px solid #c7c7c7;
+			}
+
+			.more-link {
+				float: right;
+				margin-top: 15px;
+				display: block;
+				padding: 5px;
+				background: #797979;
+				color: #fff;
+			}
+
+			.more-link:hover {
+				text-decoration: none;
+				background: #949393;
+				color: #ccc;
+			}
+
+			.page_post {
+				padding-bottom: 10px;
+			}
+
+			.page_post img {
+				float: left;
+				margin: 0 5px 5px 0;
+			}
+
+			/*Sidebar*/
+			#sidebar {
+				float: right;
+				width: 362px;
+			}
+
+			.section {
+				margin-bottom: 45px;
+				overflow: hidden;
+			}
+
+			.section h3 {
+				margin-bottom: 24px;
+			}
+
+			.section h3 span {
+				font-size: 25px;
+				text-transform: uppercase;
+				color: #fff;
+				padding: 4px 5px;
+				background: #1a1e27;
+			}
+
+			.section img {
+				float: left;
+				margin: 0 5px 5px 0;
+			}
+
+			.section ul {
+				line-height: 37px;
+				list-style: inside;
+				list-style-image: url(img/sidebar_arrow.png);
+			}
+
+			/*Footer*/
+			#footer_top {
+				background: #1a1f27;
+			}
+
+			.footer_block {
+				float: left;
+				width: 251px;
+				margin: 0 36px 0 33px;
+				padding: 27px 0 25px 0;
+				line-height: 29px;
+			}
+
+			.footer_block h3 {
+				font-size: 24px;
+				text-transform: uppercase;
+				color: #fff;
+				border-bottom: 1px solid #333435;
+				margin-bottom: 18px;
+				padding-bottom: 15px;
+				text-align: center;
+			}
+
+			.footer_block img {
+				margin: 15px 10px 0 0;
+			}
+
+			#footer_nav {
+				overflow: hidden;
+				zoom: 1;
+				margin: 24px 0 30px 24px;
+				float: left;
+			}
+
+			#footer_nav li {
+				float: left;
+				border-left: 1px solid #666;
+				padding: 0 20px;
+				margin: 0 1px 0 -1px;
+			}
+
+			#footer_bottom p {
+				float: right;
+				padding: 20px 20px 0 0;
+			}
+
+		</style>
+	</head>
+
+	<body style="margin: 0px auto; cursor: auto;">
+		<table cellpadding="0" cellspacing="0" width="100%" align="center" style="border-collapse:collapse;">
+			<tbody>
+				<tr style="background-color:#ffffff;">
+					<td style="width:33%;"></td>
+					<td style="width:33%;">
+					<table cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse; font-size:35px; color:black; width:600px; height:150px; background-color:#ffffff; font-weight:bold">
+						<tbody>
+							<tr>
+								<td style="padding: 43px 38px 0px;letter-spacing: -2px;line-height: 33px;">3 KICKSTARTER PROJECTS JOIN</td>
+							</tr>
+							<tr>
+								<td style="padding: 0px 57px 35px;letter-spacing: -2px;">FORCES ON A SPECIAL OFFER</td>
+							</tr>
+							<!--tr><td style=""><img style="color:red" src="http://iblazr.com/promo/35mmfriends/triangle.png"</td></tr-->
+
+						</tbody>
+					</table>
+					</td>
+					<td style="width:33%;"></td>
+				</tr>
+				<tr style=" background: url('http://iblazr.com/promo/35mmfriends/yellow_blank.jpg') repeat #ffda00;">
+					<td style="width:33%;"></td>
+					<td style="width:33%;">
+					<!--img style="color:red" src="http://iblazr.com/promo/35mmfriends/triangle.png"-->
+					
+					<table  cellpadding="0" cellspacing="0"  width="100%" style="text-align:center;  background: url('http://iblazr.com/promo/35mmfriends/yellow_blank.jpg') repeat #ffda00; border-collapse:collapse;
+					 font-size:35px; color:black; width:600px; height:450px; font-weight:bold;">
+						<tbody>
+							<tr>
+								<td></td><td style="
+								padding: 0;
+								"><img src="http://iblazr.com/promo/35mmfriends/row1.jpg" style="
+								vertical-align: top;
+								text-align: center;
+								"></td><td></td>
+							</tr>
+							<tr style="vertical-align:top; text-align:right;">
+								<td colspan="3"><a href="http://get.pressybutton.com/"><img src="http://iblazr.com/promo/35mmfriends/one3.jpg"></a><img style="width:135px;height: 117px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<img style="height:17px;" src="http://iblazr.com/promo/35mmfriends/blank.gif"></td>
+							</tr>
+							<tr style="vertical-align:top;">
+								<td style="width: 192px; text-align: right;"><img style="height: 59px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<a href="https://shop.iblazr.com/?35mm=friends"><img src="http://iblazr.com/promo/35mmfriends/led2.jpg"></a></td>
+								<td style="width: 196px;text-align: left;"><img style="width:35px;" src="http://iblazr.com/promo/35mmfriends/blank.gif"><img src="http://iblazr.com/promo/35mmfriends/iphone.png"></td>
+								<td style="text-align: left;"><img style="height: 69px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<a href="http://shop.thermodo.com/"><img src="http://iblazr.com/promo/35mmfriends/jack2.jpg"></a></td>
+							</tr>
+							<tr style="font-size:21px;">
+								<td colspan="3" style="
+								letter-spacing: -1px;
+								padding-bottom: 24px;
+								"><img style="height:20px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								DO YOU USE ALL POSSIBILITIES
+								<br>
+								WITH YOUR MICROJACK </td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<td style="width:33%;"></td>
+				</tr>
+				<tr style="background-color:#ffffff;">
+					<td style="width:33%;"></td>
+					<td style="width:33%;">
+					<table cellpadding="0" cellspacing="0" width="100%" style="text-align:center; border-collapse:collapse;
+					 font-size:35px; color:black; width:600px; height:450px; font-weight:bold;">
+						<tbody>
+							<tr style="
+							background: #ffffff;
+							">
+								<td></td><td style="
+								padding: 0;
+								"><img src="http://iblazr.com/promo/35mmfriends/row2.jpg" style="
+								vertical-align: top;
+								text-align: center;
+								"></td><td></td>
+							</tr>
+							<tr style="font-size:21px; background-color:#ffffff; ">
+								<td colspan="3" style="
+								font-size: 38px;
+								letter-spacing: -2px;
+								font-weight: bold;
+								padding: 27px 0px 2px;
+								">Would you like to...
+								<br>
+								</td>
+							</tr>
+							<tr style="background-color:#ffffff; ">
+								<td style="
+								padding-top: 38px;
+								width: 187px;
+								"><a href="https://shop.iblazr.com/?35mm=friends"><img src="http://iblazr.com/promo/35mmfriends/iblazr_white.png"></a></td>
+								<td style="
+								padding-top: 33px;
+								width: 198px;
+								"><a href="http://shop.thermodo.com/"><img src="http://iblazr.com/promo/35mmfriends/jack_price.png"></a></td>
+								<td style="
+								padding-top: 35px;
+								width: 208px;
+								"><a href="http://get.pressybutton.com/"><img src="http://iblazr.com/promo/35mmfriends/27.png"></a></td>
+							</tr>
+							<tr style="font-size:20px;background-color:#ffffff;">
+								<td style="
+								font-size: 12px;
+								"><img style="height: 24px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<a href="https://shop.iblazr.com/?35mm=friends">ENHANCE
+								<br>
+								YOUR PHOTOS?</a></td>
+								<td style="
+								font-size: 12px;
+								"><img style="height: 25px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<a href="http://shop.thermodo.com/">MEASURE THE
+								<br>
+								TEMPERATURE?</a></td>
+								<td style="
+								font-size: 12px;
+								"><img style="height: 24px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<a href="http://get.pressybutton.com/">CUSTOMISE
+								<br>
+								EVERYTHING?</a></td>
+							</tr>
+							<tr style="font-size:40px;background-color:#ffffff;">
+								<td style="
+								padding-top: 3px;
+								"><a href="https://shop.iblazr.com/?35mm=friends"><img src="http://iblazr.com/promo/35mmfriends/yep.png"></a></td>
+								<td style="
+								padding-top: 0px;
+								"><a href="http://shop.thermodo.com/"><img src="http://iblazr.com/promo/35mmfriends/like.jpg"></a></td>
+								<td style="
+								padding-top: 2px;
+								"><a href="http://get.pressybutton.com/"><img src="http://iblazr.com/promo/35mmfriends/getone.jpg"></a></td>
+							</tr>
+
+							<tr style="background-color:#ffffff;">
+								<td colspan="3"><img style="height: 43px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								<img src="http://iblazr.com/promo/35mmfriends/off.png"></td>
+
+							</tr>
+							<tr style="background-color:#ffffff;">
+								<td colspan="3" style="font-size: 23px;line-height: 21px;letter-spacing: 0px;padding-bottom: 29px;"><img style="height: 7px;" src="http://iblazr.com/promo/35mmfriends/blank.gif">
+								<br>
+								Offer valid until the November, 19th</td>
+							</tr>
+						</tbody>
+					</table>
+					<td style="width:33%;"></td>
+				</tr>
+				<tr style="background-color:#000000;">
+					<td style="width:33%;"></td>
+					<td style="width:33%;">
+					<table  cellpadding="0" cellspacing="0" width="100%" style="background:#000000; border-collapse:collapse; font-size:35px; color:black; font-weight:bold;">
+						<tbody>
+							<tr style="
+							font-size:10px;
+							">
+								<td style="
+								padding: 0;
+								text-align: center;
+								"><img src="http://iblazr.com/promo/35mmfriends/row3.jpg"></td>
+								<td style="
+								padding: 0; text-align: center;
+								"><img src="http://iblazr.com/promo/35mmfriends/row3.jpg"></td>
+								<td style="
+								padding: 0; text-align: center;
+								"><img src="http://iblazr.com/promo/35mmfriends/row3.jpg"></td>
+							</tr>
+							<tr style="background:black;">
+								<td style="
+								width: 33%;
+								
+								text-align: center;
+								height: 47px;
+								"><a href="https://shop.iblazr.com/?35mm=friends"><img src="http://iblazr.com/promo/35mmfriends/iblazr_footer.png"></a></td>
+								<td style="
+								width: 33%;
+								text-align: center;
+								height: 47px;
+								"><a href="http://shop.thermodo.com/"><img src="http://iblazr.com/promo/35mmfriends/therrmood.png"></a></td>
+								<td style="
+								width: 33%;
+								text-align: center;
+								height: 47px;
+								"><a href="http://get.pressybutton.com/"><img src="http://iblazr.com/promo/35mmfriends/pressy.png"></a></td>
+							</tr>
+						</tbody>
+					</table>
+					</td>
+					<td style="width:33%;"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	<meta name='forge-tag' value='forge-token:1416387493' /></body>
+</html>

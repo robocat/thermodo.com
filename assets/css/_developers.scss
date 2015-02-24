@@ -1,0 +1,291 @@
+.header-container.developers {
+	@include ri("header-developers", 2560px 900px, jpg);
+
+	.header {
+		text-align: center;
+		height: 900px;
+
+		.text {
+			@include span-columns(12 of 12);
+			@include omega;
+			margin-top: 120px;
+
+			h1 {
+				margin-bottom: 0;
+			}
+
+			p {
+				// margin: 18px auto 0 auto;
+			}
+
+			.button {
+				font-size: 14pt;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+.developers-info {
+	.row {
+		@include span-columns(12 of 12);
+		@include omega;
+
+		clear: both;
+		margin-top: 150px;
+
+		h2 {
+			margin-top: 0px;
+		}
+
+		img {
+			margin-top: 30px;
+		}
+
+		.aside, .bside {
+			@include span-columns(6 of 12);
+		}
+
+		.bside {
+			@include omega;
+		}
+
+		.measurement-iphone {
+			display: none;
+		}
+	}
+
+	.developer-newsletter {
+		@include span-columns(12 of 12);
+		background-color: #d3f9ff;
+		min-height: 165px;
+		margin-top: 90px;
+		margin-bottom: 40px;
+
+		h4{
+			margin-bottom: 0;
+			margin-top: 40px;
+		}
+
+		p {
+			margin-top: 3px;
+			font-size: 13px;
+			line-height: 20px;
+		}
+
+		.icon {
+			@include span-columns(2 of 12);
+			text-align: center;
+			padding-top: 35px;
+		}
+
+		.text {
+			@include span-columns(5 of 12);
+		}
+
+		.form {
+			@include span-columns(5 of 12);
+			@include omega;
+			padding-top: 50px;
+
+			input[type="email"] {
+				float: right;
+				background-color: transparent;
+				border: 2px solid #53cde0;
+				border-radius: 5px;
+				font-weight: 400;
+				font-size: 16px;
+				padding: 16px 11px;
+				outline: none;
+				@include placeholder {
+					color: #53cde0;
+				}
+			}
+
+			input[type="submit"] {
+				float: right;
+				background-color: #53cde0;
+				background-repeat: no-repeat;
+				border: 2px solid #53cde0;
+				border-radius: 5px;
+				padding: 17px 36px;
+				background-position: center center;
+				@include retina-image("newsletter-checkmark", 48px 32px);
+				margin-left: 10px;
+				margin-right: 30px;
+
+				&:hover {
+					background-color: #000;
+					border-color: #000;
+				}
+
+				&:disabled:hover {
+					background-color: #53cde0;
+					border-color: #53cde0;
+				}
+			}
+		}
+	}
+}
+
+@include media(max-width 850px) {
+	.container .developers-info-container .developers-info {
+		h2 {
+			font-size: 42pt;
+		}
+	}
+}
+
+@include media(max-width 650px) {
+	.container .developers-info-container .developers-info {
+		margin-bottom: 0;
+
+		.aside, .bside, .measurement-iphone {
+			display: block;
+			@include span-columns(12 of 12);
+			@include omega;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.first, .second, .third {
+			margin-top: 30px;
+		}
+
+		.split, .measurement, .measurement-iphone, .sdk {
+			text-align: center;
+		}
+
+		.split img, .measurement img {
+			display: inline-block;
+			margin-top: 30px;
+			width: 300px;
+		}
+
+		.measurement {
+			display: none;
+		}
+
+		.developer-newsletter {
+			height: 260px;
+
+			.text {
+				@include span-columns(12 of 12);
+				@include omega;
+			}
+
+			.form {
+				@include span-columns(12 of 12);
+				@include omega;
+				margin-top: 20px;
+				padding-top: 0;
+
+				form {
+					width: 331px;
+					margin: 0 auto;
+				}
+
+				#submit {
+					margin-right: 0px;
+				}
+			}
+		}
+	}
+}
+
+@include media(max-width 900px) {
+	.header-container.developers {
+		.header .text {
+			// margin: 120px 0;
+
+			h1 {
+				font-size: 42pt;
+				line-height: 48pt;
+				// margin-top: 60px;
+			}
+
+			p {
+				font-size: 22pt;
+			}
+
+			.button {
+				// margin-bottom: 60px;
+			}
+		}
+	}
+	.developers-info-container .developers-info {
+		.developer-newsletter {
+			h4 {
+				font-size: 20px;
+				line-height: 28px;
+				margin-left: 10px;
+			}
+
+			p {
+				margin-left: 10px;
+				font-size: 13px;
+				line-height: 18px;
+			}
+
+			.icon {
+				display: none;
+			}
+
+			.text {
+				@include span-columns(5 of 12);
+			}
+
+			.form {
+				@include span-columns(7 of 12);
+
+				input[type="submit"] {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
+@include media(max-width 600px) {
+	.header-container.developers {
+		.header .text {
+			margin: 120px 0;
+		}
+	}
+}
+
+@include media(max-width 474px) {
+	.header-container.developers {
+		.header .text {
+			margin: 60px 0;
+
+			.button {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+@include media(max-width 425px) {
+	.header-container.developers {
+		.header .text {
+			margin: 60px 0;
+		}
+	}
+}
+
+@include media(max-width 320px) {
+	body .container {
+		.developers-info-container .developers-info {
+			.developer-newsletter {
+				#developer_signup {
+					width: 320px;
+
+					input[type="submit"] {
+						margin-right: 13px;
+					}
+				}
+			}
+		}
+	}
+}

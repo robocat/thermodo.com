@@ -1,0 +1,220 @@
+.header-container.faq-page {
+	@include ri("header-faq", 2560 900px, jpg);
+
+	.header {
+		height: 900px;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+	body .container .header-container.faq-page {
+		background-image: url('/assets/images/header-faq.jpg');
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	body .container .header-container.faq-page {
+		background-image: url('/assets/images/header-faq.jpg');
+	}
+}
+
+.faq-page {
+	div.text {
+		@include span-columns(12 of 12);
+		@include omega;
+		text-align: center;
+		margin-top: 120px;
+	}
+
+	h1 {
+		margin-bottom: 0;
+	}
+
+	.faq-index {
+		margin: 0;
+
+		li {
+			padding: 4px 0;
+		}
+
+		a {
+			text-decoration: underline;
+			font-size: 13pt;
+			font-weight: 300;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.bside {
+		margin-bottom: 130px;
+	}
+}
+
+.container .header-container.faq-page {
+	.aside, .bside {
+		padding: 0 10px;
+	}
+}
+
+.faqs {
+	margin-top: 50px;
+	.faq {
+		@include span-columns(12 of 12);
+		@include omega;
+		margin-bottom: 60px;
+
+		a {
+			color: #c6141a;
+			font-weight: bold;
+			text-decoration: underline;
+
+			@include transition(all 0.2s ease);
+
+			&:hover {
+				color: #333;
+			}
+		}
+
+		.bside a:hover {
+			// BUG: Chrome makes the image jump around
+			// when combined with a transition
+			opacity: 0.8;
+		}
+
+		p {
+			font-size: 14pt;
+			line-height: 22pt;
+			margin-top: 0;
+			margin-bottom: 30px;
+		}
+
+		.aside, .bside {
+			@include span-columns(6 of 12);
+		}
+
+		.bside {
+			@include omega;
+
+			text-align: center;
+
+			img {
+				max-width: 90% !important;
+			}
+		}
+
+		&.time {
+			.img {
+				text-align: center;
+			}
+			.bside {
+				text-align: left;
+
+				img {
+					max-width: 100% !important;
+				}
+			}
+		}
+	}
+}
+
+@include media(max-width 780px) {
+	.container {
+		.faqs-container .faqs {
+			.faq {
+				.aside, .bside {
+					@include span-columns(12 of 12);
+					@include omega;
+				}
+			}
+		}
+	}
+}
+
+@include media(max-width 700px) {
+	.container {
+		.header-container.faq-page {
+			.header {
+				text-align: left;
+			}
+		}
+	}
+}
+
+@include media(max-width 568px) {
+  body div.container {
+    .header-container.faq-page .header {
+      div.text {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@include media(max-width 525px) {
+	.container {
+		.header-container.faq-page {
+			.header {
+				h1 {
+					font-size: 42pt;
+					line-height: 50pt;
+				}
+
+				p {
+					font-size: 22pt;
+					line-height: 30pt;
+				}
+
+				div.text {
+					margin: 60px 0;
+				}
+
+			}
+		}
+	}
+}
+
+@include media(max-width 420px) {
+	.container {
+		.header-container.faq-page {
+
+			.header {
+				h1 {
+					font-size: 42pt;
+					line-height: 48pt;
+				}
+
+				p {
+					font-size: 24pt;
+					line-height: 30pt;
+					margin-bottom: 40px;
+
+					br {
+						display: none;
+					}
+				}
+
+				div.text {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.faqs-container .faqs {
+			.faq {
+				h3 {
+					font-size: 24pt;
+					font-weight: 200;
+					line-height: 32pt;
+					padding: 0 5px;
+				}
+
+				p {
+					font-size: 13pt;
+				}
+			}
+		}
+	}
+}
