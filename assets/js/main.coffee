@@ -89,7 +89,7 @@ jQuery(document).ready ->
 
 		$('#developer_signup_submit').attr 'disabled', 'disabled'
 
-		email_field = $('#email')
+		email_field = $('#developer_signup_email')
 		email_field.attr 'disabled', 'disabled'
 
 		email = email_field.val()
