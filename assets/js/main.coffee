@@ -83,3 +83,19 @@ jQuery(document).ready ->
 		$.post url, post_data, (data, status, xhr) ->
 			$('#email').val('Thank you')
 			console.log(data)
+
+	$('#developer_signup').on 'submit', (e) ->
+		e.preventDefault()
+
+		$('#developer_signup_submit').attr 'disabled', 'disabled'
+
+		email_field = $('#email')
+		email_field.attr 'disabled', 'disabled'
+
+		email = email_field.val()
+		url = 'http://newsletters.robocatapps.com/signup'
+		post_data = { email: email_field.val(), list: "thermodo-developers" }
+		
+		$.post url, post_data, (data, status, xhr) ->
+			email_field.val('Thank you')
+			console.log(data)
