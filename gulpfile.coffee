@@ -37,7 +37,7 @@ reload_script = '<script src="//localhost:{{ config.port }}/livereload.js"></scr
 build_path = "./public"
 
 paths = {
-	copyfile: "{secret/*,35mmfriends/*,videos/*,favicon.ico,apple-touch-icon.png}",
+	copyfile: "{secret/*,35mmfriends/*,videos/*,developer/*,favicon.ico,apple-touch-icon.png}",
 	handlebars: "./**/*.handlebars",
 	sass: "assets/css/**/*.{scss,sass}",
 	coffee: "assets/js/**/*.coffee",
@@ -67,7 +67,7 @@ gulp.task 'clean', (cb) ->
 		.pipe(clean { force: false, read: true } )
 		
 
-gulp.task 'scripts', ->
+gulp.task 'coffee', ->
 	gulp.src(paths.coffee)
 		.pipe(sourcemaps.init())
 		.pipe(coffee({bare: true}))
@@ -77,6 +77,8 @@ gulp.task 'scripts', ->
 		.pipe(gulp.dest("#{build_path}/js"))
 		.pipe(reload())
 
+
+gulp.task 'jsvendor', ->
 	gulp.src(paths.js)
 		.pipe(sourcemaps.init())
 		.pipe(order([
@@ -94,6 +96,8 @@ gulp.task 'scripts', ->
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest("#{build_path}/js/"))
 		.pipe(reload())
+
+gulp.task 'scripts', ['coffee', 'jsvendor']
 
 gulp.task 'images', ->
 	gulp.src(paths.images)
@@ -142,6 +146,9 @@ gulp.task 'html', ->
 		},
 		"software/index.handlebars": {
 			title: "Software"
+		},
+		"developer/index.handlebars": {
+			title: "Developer"
 		}
 	}
 
@@ -153,6 +160,7 @@ gulp.task 'html', ->
 			tophome: readPartial('tophome'),
 			topfaq: readPartial('topfaq'),
 			topsoftware: readPartial('topsoftware'),
+			topdeveloper: readPartial('topdeveloper'),
 			header: readPartial('header'),
 			footer: readPartial('footer'),
 			reload: ""

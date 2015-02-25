@@ -120,6 +120,15 @@ p {
 			background-color: rgb(50, 144, 251);
 		}
 	}
+	&.blue {
+		background-color: #76cedd;
+		color: #fff;
+		padding: 20px 30px;
+
+		&:hover {
+			background-color: #201e23;
+		}
+	}
 	&.red {
 		background-color: #f15942;
 		color: #fff;
@@ -179,6 +188,13 @@ p {
 	&.sdk {
 		line-height: 30px;
 
+		.graphical {
+			@include ri("button-graphical", 28px 24px);
+			width: 28px;
+			height: 24px;
+			margin-top: 2px;
+		}
+
 		.ios {
 			@include ri("button-ios", 25px 30px);
 		}
@@ -194,6 +210,10 @@ p {
 			float: left;
 			margin-right: 15px;
 		}
+	}
+
+	&.graphical {
+		margin-top: 10px;
 	}
 }
 
@@ -265,6 +285,17 @@ p {
 			line-height: 44px;
 			font-weight: 400;
 			float: right;
+
+			.text {
+				margin-top: 0;
+			}
+
+			span {
+				display: block;
+				float: left;
+				height: 46px;
+				line-height: 46px;
+			}
 
 			.item-count {
 				display: inline-block;

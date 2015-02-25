@@ -1,0 +1,60 @@
+{{> header }}
+{{> topdeveloper }}
+
+<div class="developers-info-container cont">
+	<div class="developers-info int">
+		<div class="row first">
+			<div class="split aside">
+				{{{ img "thermodo_split.png" }}}
+			</div>	
+			<div class="intro bside">
+				<h2>How does<br> it work?</h2>
+				<p>Thermodo´s hardware can be described as a precise and sensitive passive thermometer. Consisting of a high precision NTC thermistor, a precision reference resistor and a bias resistor. By sending a differential signal through the thermistor and the reference resistor, we can dynamically determine the thermistors value relative to the reference resistor.</p>
+			</div>
+		</div>
+
+		<div class="row second">
+			<div class="measurement-iphone cside">
+				{{{ img "thermodo_signal.png" }}}
+			</div>
+			<div class="signal aside">
+				<h2>Signal analysis and linear interpolation</h2>
+				<p>Through linear interpolation we measure the sensor´s temperature precise and redundant. By alternating between different signal amplitudes we can dynamically determine the current sensor impedance. This makes Thermodo independent of absolute signal levels, responsive and robust.</p>
+			</div>
+			<div class="measurement bside">
+				{{{ img "thermodo_signal.png" }}}
+			</div>
+		</div>
+
+
+		<div class="row third">
+			<div class="sdk aside">
+				{{{ img "thermodo_sdk.png" }}}
+			</div>
+			<div class="point bside">
+				<h2>What is<br> the point?</h2>
+				<p>Thermodo is a neat little device already in the hands of tens of thousands of people and there's so many interesting things that can be done with the data it is able to collect. While we have basic software, like our Companion app, the idea has always been to build a platform for others to use. With the Thermodo SDK you can easily build temperature awareness into your service or product. We build the hardware, but you get to dream up the many novel uses for it.</p>
+			</div>
+		</div>
+
+		<div class="developer-newsletter">
+			<div class="icon">
+				{{{ img "developer_newsletter.png" }}}
+			</div>
+			<div class="text">
+			<h4>Join our developer newsletter</h4>
+				<p>We like to keep everyone up to speed with what’s going on. Put your email in the field and you’ll join a small list of developers who hears about Thermodo platform specific news first.</p>
+			</div>
+			<div class="form">
+				<form action="post" id="developer_signup">
+					<input type="submit" value="" id="developer_signup_submit" />
+					<input type="email" name="email" id="developer_signup_email" placeholder="Your Email" />
+					<div class="clearboth"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{> bottomdefault }}
+{{> footer }}
