@@ -1,5 +1,6 @@
 install:
 	make clean \
+	&& npm install gulp \
 	&& npm install \
 	&& gem install bundler \
 	&& bundle install \
