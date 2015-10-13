@@ -65,7 +65,7 @@ gulp.task 'clean', (cb) ->
 	gulp.src(build_path)
 		.pipe(plumber { errorHandler: onError } )
 		.pipe(clean { force: false, read: true } )
-		
+
 
 gulp.task 'coffee', ->
 	gulp.src(paths.coffee)
@@ -113,7 +113,7 @@ gulp.task 'copy', ->
 
 gulp.task 'sass', ->
 	sass_paths = ['./assets/css/vendor/bourbon', './assets/css/vendor/neat']
-	sass_config = { 
+	sass_config = {
 		includePaths:  sass_paths,
 		imagePath: config.imgpath
 	}
@@ -139,10 +139,10 @@ gulp.task 'html', ->
 
 	template_data = {
 		"index.handlebars": {
-			title: "The Tiny Thermometer for your mobile device"
+			title: "The Tiny Thermometer for iPhone, iPad & Android"
 		},
-		"faq/index.handlebars": {
-			title: "FAQ"
+		"support/index.handlebars": {
+			title: "Support"
 		},
 		"software/index.handlebars": {
 			title: "Software"
